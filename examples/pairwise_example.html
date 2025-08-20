@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Pairwise Example</title>
+  <script src='../jspsych-6.3.1/jspsych.js'></script>
+  <script src='../jspsych-6.3.1/plugins/jspsych-fullscreen.js'></script>
+  <script src='../jspsych-6.3.1/plugins/jspsych-instructions.js'></script>
+  <script src='../jspsych-6.3.1/plugins/jspsych-preload.js'></script>
+  <script src='../jspsych-image-rating-pairwise.js'></script>
+  <script src='../jspsych-image-rating-pairwise-instr.js'></script>
+  <script src="image_rating.js"></script>
+  <script src="stimuli.js"></script>
+  <link href="../jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css">
+  <link href="../jspsych-image-rating.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div style="text-align: center;">
+    <span style="font-size: 24px;">
+      <br><br>
+      If you are seeing this message for <span style="color: rgb(255, 0, 0);"> <b>more than 5 minutes</b></span>,<br>
+      please screen-capture this screen and send the image to us.
+      <br><br>
+      <span style="font-size: 28px;">We are very sorry for the inconvenience.</span>
+    </span>
+  </div>
+
+  <div id='display_stage_background'></div>
+  <div id='display_stage'></div>
+
+  <script>
+    const rating_type = 'pairwise';
+    const prompt_header = 'Here is a Prompt';
+    const prompt_footer = '';
+    const minimum_trial_duration = 1000;
+    const img_src_main = 'https://kywch.github.io/ImageRatingStudy/images_main/';
+    const img_src_attn = 'https://kywch.github.io/ImageRatingStudy/images_main/';
+    const img_src_prac = 'https://kywch.github.io/ImageRatingStudy/images_prac/';
+    const img_src_attn_prac = 'https://kywch.github.io/ImageRatingStudy/images_prac/';
+    const num_trial_prac = 4;
+    const num_attn_trial_prac = 1;
+    const num_trial_main = 8;
+    const num_attn_trial_main = 2;
+    const trial_prefix = 'main_trial_';
+    const trash_can = '';
+    const image_size = [560, 420];
+
+    let result_string;
+
+    const timeline = createTimeline(
+      rating_type, filenames, attn_filenames, img_src_main, img_src_attn,
+      num_trial_prac, num_attn_trial_prac, num_trial_main, num_attn_trial_main, 
+      prompt_header, prompt_footer, minimum_trial_duration, trial_prefix, trash_can,
+      image_size, {'img_src_prac':img_src_prac, 'img_src_attn_prac':img_src_attn_prac,
+      'prac_filenames': prac_filenames, 'prac_attn_filenames': prac_attn_filenames}
+    );
+
+    jsPsych.init({
+      timeline: timeline,
+      display_element: 'display_stage',
+      exclusions: { // browser window needs to have these dimensions, if not, participants get the chance to maximize their window, if they don't support this resolution when maximized they can't participate.
+          min_width: 1200,
+          min_height: 900
+        },
+      on_finish: function () {
+        var display_element = jsPsych.getDisplayElement();
+        display_element.innerHTML = "Results will be stored as a single string variable with a csv-like formatting<br>" + 
+          "delimiter - space (' '), newline - semicolon (';')<p>" +
+          "<b>Result string ==></b> " + result_string;
+      }
+    });
+  </script>
+
+</body>
+
+</html>

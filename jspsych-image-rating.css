@@ -1,0 +1,212 @@
+/* Display elements (this is where the jsPsych elements gets inserted) */
+#display_stage_background {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: white;
+    z-index: -1;
+}
+
+#display_stage {
+    position: fixed;
+    left: 1vw;
+    top: 1vh;
+    height: 98vh;
+    width: 98vw;
+    box-shadow: 1px 1px 1px #999;
+    border-radius: 15px;
+    background-color: white;
+    z-index: 0;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    overflow: auto;
+    /* overflow-y: hidden;
+    overflow-x: hidden; */
+}
+
+/* general buttons */
+.jspsych-btn{
+    font-size: 20px;
+    padding: 10px 10px 10px 10px;
+    color: white;
+    background-color: #376fc8;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    width: 130px;
+    height: 50px;
+}
+
+.jspsych-btn:hover{
+    background-color: #214278;
+}
+
+.jspsych-btn:disabled{
+    color: white;
+    background-color: #87a8de;
+}
+
+/* image rating general */
+
+.jspsych-image-rating-prompt-header{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    padding-bottom: 2px;
+}
+
+.jspsych-image-rating-prompt-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2px;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
+    align-items:center;
+    column-gap:0px;
+}
+
+.jspsych-image-rating-prompt-footer-left{
+    display: flex;
+    grid-column:1;
+    justify-self:start;
+    vertical-align: middle;
+}
+
+.jspsych-image-rating-prompt-footer-center{
+    grid-column:2;
+    text-align:center;
+}
+
+.jspsych-image-rating-prompt-footer-right{
+    display: flex;
+    grid-column:3;
+    justify-self:end;
+    vertical-align: middle;
+}
+
+.jspsych-image-rating-image-container{
+    border-collapse: collapse;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.jspsych-image-rating-image-container td {
+    border:0;
+    padding:0;
+}
+/* For FIRE and pairwise */
+
+.jspsych-image-rating-image-container .selected {
+    border: 3px solid magenta;
+}
+
+.jspsych-image-rating-image-container .trashed {
+    opacity: 0.3;
+}
+
+/* For Slider (also see the CSS on jspsych.css) */
+
+.jspsych-image-rating-slider-container{
+    position: relative; 
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.jspsych-image-rating-slider-container .slider-bubble {
+    background: gray;
+    color: white;
+    position: absolute;
+    border-radius: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    left: 50%;
+    bottom: 25px;
+    transform: translateX(-50%);
+}
+
+/* For Likert */
+
+.jspsych-image-rating-likert-container {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.jspsych-image-rating-likert-opts {
+    list-style:none;
+    width: auto;
+    margin: 0 auto; 
+    padding:0;
+    display:block;
+    font-size: 14px;
+    line-height:1.1em;
+}
+
+.jspsych-image-rating-likert-opt-label { 
+    line-height: 1.1em; color: #444; 
+}
+
+.jspsych-image-rating-likert-opts:before {
+    content: ''; 
+    position:relative; 
+    top:11px;
+    display:block; 
+    background-color:#efefef; 
+    height:4px; 
+    width:100%;
+}
+
+.jspsych-image-rating-likert-opts:last-of-type {
+    border-bottom: 0;
+}
+
+.jspsych-image-rating-likert-opts li{
+    display:inline-block;
+    text-align:center; 
+    vertical-align: top;
+}
+
+.jspsych-image-rating-likert-opts li input[type=radio]{
+    display:block; 
+    position:relative; 
+    top:0; 
+    left:50%; 
+    margin-left:-6px;
+}
+
+/* Instruction */
+
+.jspsych-image-rating-instr {
+	display: flex;
+	align-items: end;
+    justify-content: center;
+    font-size: 25px;
+    /* white-space: pre-wrap; */
+    height:60px;
+    padding-bottom: 4px;
+    margin-bottom: 2px;
+    border-bottom:solid black 2px;
+}
+
+.jspsych-image-rating-instr p {
+    margin: 0;
+    text-align: center;
+}
+
+.jspsych-image-rating-instr-highlight {
+    border: 3px solid red;
+}
+
+/* ----------------------------------------------------- */
+
+.jspsych-instructions-nav {
+    text-align: center;
+    margin-top: 5px;
+    position: relative;
+    z-index: 1;
+}
