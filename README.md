@@ -40,9 +40,9 @@ First, load the plugin’s JavaScript file in your experiment’s HTML page alon
 ```html
 <head>
   <script src="jspsych-6.3.1/jspsych.js"></script>
-  <script src="plugins/jspsych-image-rating-fire.js"></script>
+  <script src="jspsych-image-rating-fire.js"></script>
   <link href="jspsych-6.3.1/css/jspsych.css" rel="stylesheet" type="text/css">
-  <link href="css/jspsych-image-rating.css" rel="stylesheet" type="text/css">
+  <link href="jspsych-image-rating.css" rel="stylesheet" type="text/css">
 </head>
 ```
 
@@ -62,8 +62,8 @@ Then, you can insert the trial to a timeline and run it with `jsPsych.init()`. S
 
 This repository provides example scripts to help you get started quickly.  
 
-* `examples/image-rating.js` contains helper functions to build a jsPsych timeline using any of the rating methods.  
-* The `/examples/{method}_example.html` files demonstrate a full working setup for each method. These can also serve as a base for adapting the plugins to your own experiment:  
+* `examples/image_rating.js` contains helper functions to build a jsPsych timeline using any of the rating methods.  
+* The `examples/{method}_example.html` files demonstrate a full working setup for each method. These can also serve as a base for adapting the plugins to your own experiment:  
   * FIRE: `examples/fire_example.html`  
   * Likert: `examples/likert_example.html`  
   * Slider: `examples/slider_example.html`  
@@ -72,13 +72,13 @@ This repository provides example scripts to help you get started quickly.
   * FIRE: [https://nwrim.github.io/jspsych-image-rating/examples/fire_example.html](https://nwrim.github.io/jspsych-image-rating/examples/fire_example.html)
   * Likert: [https://nwrim.github.io/jspsych-image-rating/examples/likert_example.html](https://nwrim.github.io/jspsych-image-rating/examples/likert_example.html)
   * Slider: [https://nwrim.github.io/jspsych-image-rating/examples/slider_example.html](https://nwrim.github.io/jspsych-image-rating/examples/slider_example.html)
-  * Pairwise: [https://nwrim.github.io/jspsych-image-rating/examples/fire_example.html](https://nwrim.github.io/jspsych-image-rating/examples/slider_example.html)
+  * Pairwise: [https://nwrim.github.io/jspsych-image-rating/examples/pairwise_example.html](https://nwrim.github.io/jspsych-image-rating/examples/pairwise_example.html)
 
 # Dependencies and Attribution
 * This repository **bundles [jsPsych v6.3.1](https://www.jspsych.org/)** so that the included examples can be run without additional setup.  
 * jsPsych is an open-source experiment framework created and maintained by Joshua R. de Leeuw and contributors. Read more about the awesome framwork [here](https://www.jspsych.org/)!
 * The `image-rating-likert` and `image-rating-slider` plugins build on the `survey-likert` and `image-slider-response` plugin from jsPsych v6.3.1
-* An earlier version of the pairwise and FIRE plugin has been created by Kyoung Whan Choe (see [here](https://github.com/kywch/ImageRatingStudy)), which this plugin build on.
+* An earlier version of the pairwise and FIRE plugins has been created by Kyoung Whan Choe (see [here](https://github.com/kywch/ImageRatingStudy)), which these plugins build on.
 
 # Citation
 
